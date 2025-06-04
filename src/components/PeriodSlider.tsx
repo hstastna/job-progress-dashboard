@@ -26,7 +26,7 @@ export const PeriodSlider: FC = () => {
 
   return (
     <label htmlFor={inputId} className="period-label">
-      <span>Period: {period} ms</span>
+      <span>Job update period: {period} ms</span>
       <input
         id={inputId}
         className="period-input"
