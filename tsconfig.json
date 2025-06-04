@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ESNext",
+    "jsx": "react-jsx", // no need to import React in every file, for React 17+
+
+    /* Modules */
+    "module": "ESNext",
+    "moduleResolution": "node10", // for modern ESM support
+
+    /* Interop Constraints */
+    "isolatedModules": true,
+    "esModuleInterop": true, // support for importing CommonJS modules
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Completeness */
+    "skipLibCheck": true // skip type checking all .d.ts files
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
