@@ -1,12 +1,11 @@
 import { useSignalEffect } from "@preact/signals-react";
 import { FC, useCallback, useState } from "react";
-import { useHandleJob } from "../hooks/useHandleJob";
 import { useWebSocket } from "../hooks/useWebSocket";
 import { jobsSignal } from "../signals/jobsSignal";
 import { periodSignal } from "../signals/periodSignal";
 import { WSS_BASE_URL } from "../utils/constants";
 import { Job } from "../utils/types";
-import { getWebSocketUrlWithPeriod } from "../utils/utils";
+import { getWebSocketUrlWithPeriod, handleJob } from "../utils/utils";
 import { JobCard } from "./JobCard";
 
 export const JobList: FC = () => {
@@ -25,7 +24,7 @@ export const JobList: FC = () => {
     setTick((tick) => tick + 1);
   });
 
-  const handleJobMessage = useCallback(useHandleJob, []); // for stable message handler reference
+  const handleJobMessage = useCallback(handleJob, []); // for stable message handler reference
 
   useWebSocket(webSocketUrl, handleJobMessage);
 
