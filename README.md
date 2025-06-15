@@ -107,7 +107,7 @@ More possible improvements could include:
 
 - **Testing:**
 
-  - Add unit and integration tests for hooks (`useWebSocket`, `useHandleJob`) and components to ensure reliability, especially under rapid message loads.
+  - Add unit and integration tests for hooks (`useWebSocket`) and components to ensure reliability, especially under rapid message loads.
 
 - **Accessibility:**
   - Enhance accessibility by improving keyboard navigation, screen reader support for job lists and controls.
