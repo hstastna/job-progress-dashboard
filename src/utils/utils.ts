@@ -1,5 +1,6 @@
 import { jobsSignal } from "../signals/jobsSignal";
 import { DEFAULT_PERIOD, MAX_PERIOD, MIN_PERIOD } from "./constants";
+import { cancelJobRemoval, scheduleJobRemoval } from "./jobRemovalUtils";
 import { Job } from "./types";
 
 export const getWebSocketUrlWithPeriod = (
@@ -86,9 +87,18 @@ export const handleJob = (event: MessageEvent) => {
         {}
       );
       break;
-    case "job-update":
-      batchJobUpdate(message.payload);
+    case "job-update": {
+      const job: Job = message.payload;
+      batchJobUpdate(job);
+
+      if (job.status === "completed") {
+        scheduleJobRemoval(job.id);
+      } else {
+        // cancel job removal in case the job status changed from completed
+        cancelJobRemoval(job.id);
+      }
       break;
+    }
     default:
       break;
   }

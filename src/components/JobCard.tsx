@@ -1,5 +1,4 @@
-import { FC, memo, useEffect } from "react";
-import { jobsSignal } from "../signals/jobsSignal";
+import { FC, memo } from "react";
 import { Job, StatusLabels } from "../utils/types";
 
 type JobProps = {
@@ -8,22 +7,6 @@ type JobProps = {
 
 export const JobCard: FC<JobProps> = memo(({ jobData }) => {
   const { id, name, progress, status } = jobData;
-
-  useEffect(() => {
-    if (status === "completed") {
-      const timeout = setTimeout(() => {
-        jobsSignal.value = ((prevJobs) => {
-          const rest = Object.fromEntries(
-            Object.entries(prevJobs).filter(([key]) => key !== id)
-          );
-
-          return rest;
-        })(jobsSignal.value);
-      }, 5000);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [status, id]);
 
   return (
     <div className="job">

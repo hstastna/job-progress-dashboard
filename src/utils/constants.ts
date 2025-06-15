@@ -6,3 +6,5 @@ export const MAX_RECONNECT_ATTEMPTS = 5;
 export const RECONNECT_INTERVAL = 2000;
 
 export const WSS_BASE_URL = "wss://hiring1.beey.io/ws/jobs";
+
+export const REMOVE_JOB_TIMEOUT = 5000;
