@@ -1,8 +1,6 @@
 # Job Progress Dashboard
 
-Let me introduce you the solution for [one short assignment](https://github.com/newtontechnologies/misc-hiring1) designed to demonstrate how to approach frontend architecture, state management, and component design using React (with TypeScript).
-
-The challenge was to create a small one-page React application that connects to a WebSocket server (already set up and running) and displays real-time job progress updates. Enjoy!
+Let me introduce you the small demonstration of how to approach frontend architecture, state management, and component design using React (with TypeScript). The challenge was to create a small one-page React application that connects to a WebSocket server (already set up and running) and displays real-time job progress updates. Enjoy!
 
 ![Job Progress Dashboard](./public/dashboard-jobs.png)
 
